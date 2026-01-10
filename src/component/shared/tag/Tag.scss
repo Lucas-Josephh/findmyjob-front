@@ -1,0 +1,57 @@
+.extranet-tag {
+    &_general {
+        font-size: .75rem;
+        padding-top: .125rem;
+        padding-bottom: .125rem;
+        padding-left: .625rem;
+        padding-right: .625rem;
+        border-radius: calc(.5rem - 2px);
+        font-weight: 600;
+        box-shadow: (0 0 #0000, 0 0 #0000,0 0 #0000, 0 0 #0000), 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+    }
+
+    &_cdd {
+        color: rgb(29, 78, 216);
+        background-color: rgb(219, 234, 254);
+    }
+
+    &_cdi {
+        color: rgb(4, 120, 87);
+        background-color: rgb(209, 250, 229);
+    }
+    
+    &_stage {
+        color: rgb(126 34 206);
+        background-color: rgb(243 232 255);
+    }
+    
+    &_alternance {
+        color: rgb(194, 65, 12);
+        background-color: rgb(255, 237, 213);
+    }
+
+    &_interim {
+        color: rgb(161, 98, 7);
+        background-color: rgb(254, 249, 195);
+    }
+
+    &_freelance {
+        color: rgb(190, 24, 93);
+        background-color: rgb(252, 231, 243);
+    }
+
+    &_sursite {
+        color: rgb(51, 65, 85);
+        background-color: rgb(241, 245, 249);
+    }
+
+    &_hybride {
+        color: rgb(3, 105, 161);
+        background-color: rgb(224, 242, 254);
+    }
+
+    &_fullremote {
+        color: rgb(15, 118, 110);
+        background-color: rgb(204, 251, 241);
+    }
+}

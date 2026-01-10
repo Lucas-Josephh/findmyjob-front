@@ -1,0 +1,63 @@
+.extranet-offerAnnouncement {
+    display: flex;
+    flex-direction: column;
+    gap: .50rem;
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: .75rem;
+    border: 2px solid rgb(226, 232, 240);
+    background-color: white;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.01);
+        border-color: rgb(56, 189, 248);
+    }
+
+    &-title {
+        display: flex;
+        justify-content: space-between;
+
+        &_h3 {
+            color: rgb(15, 23, 42);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        &_date {
+            color: rgb(148, 163, 184);
+            font-size: .75rem;
+        }
+    }
+
+    &_companie {
+        color: rgb(71, 85, 105);
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+
+        &_location {
+            color: rgb(100, 116, 139);
+        }
+
+        &_level {
+            font-size: .75rem;
+            font-weight: 600;
+            padding-left: .625rem;
+            padding-right: .625rem;
+            padding-top: .125rem;
+            padding-bottom: .125rem;
+            border-radius: calc(.5rem - 2px);
+            border: 1px solid rgb(226, 232, 240);
+        }
+    }
+
+    &_salary {
+        color: rgb(5, 150, 105);
+        font-weight: 500;
+        font-size: .875rem;
+    }
+}
