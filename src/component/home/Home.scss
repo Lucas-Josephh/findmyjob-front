@@ -1,3 +1,165 @@
 .app-home {
-    width: 100%;
+    &-head {
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to top right, rgb(228, 255, 255), rgb(232, 246, 255));
+        height: 76vh;
+
+        &-container {
+            margin-top: 6%;
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 78vh;
+            
+                &-form {
+                    display: flex;
+                    gap: 10px;
+                    background-color: white;
+                    width: max-content;
+                    padding: 10px;
+                    border: 2px solid rgb(226, 232, 240);
+                    border-radius: 16px;
+                    margin-top: 2.5rem;
+                    box-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);
+
+                    &-group {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding-left: 14px;
+                        color: rgb(151, 151, 151);
+                        border: 2px solid transparent;
+
+                        &:has(input:focus) {
+                            border-color: #0ea5e9;
+                            border-radius: 12px;
+                        }
+
+                        &_input {
+                            border: none;
+                            width: 230px;
+                            height: 54px;
+                            border-radius: 12px;
+                            outline: none;
+                        }
+
+                        &_submit {
+                            color: white;
+                            padding-left: 2rem;
+                            padding-right: 2rem;
+                            padding-top: .5rem;
+                            padding-bottom: .5rem;
+                            font-size: 1.125rem;
+                            font-weight: 500;
+                            outline: none;
+                            border: none;
+                            border-radius: 12px;
+                            cursor: pointer;
+                            background: linear-gradient(to right, #0ea5e9, #2563eb);
+                        }
+                    }
+                }
+            
+                &_tag {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: rgb(3 105 161);
+                    width: max-content;
+                    padding: 6px 14px 6px 14px;
+                    border-radius: 4px;
+                    background-color: rgb(224 242 254);
+                    font-weight: 500;
+                    font-size: .875rem;
+                    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+                    
+                    &:hover {
+                        background-color: rgb(64, 64, 64);
+                    }
+                }
+
+                &-title {
+                    font-size: 4.5rem;
+                    letter-spacing: -.025em;
+                    margin: 20px 0 10px;
+                    color: rgb(15 23 42);
+
+                    &_my {
+                        color: rgb(37, 99, 235);
+                    }
+                }
+
+                &_subtitle {
+                    color: rgb(71 85 105);
+                    font-size: 1.25rem;
+                    line-height: 1.625;
+                }
+
+                &-alltag {
+                    display: flex;
+                    gap: 16px;
+                    margin-top: 40px;
+                
+                &_tag {
+                    color: rgb(71 85 105);
+                    font-size: .875rem;
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    border-radius: 9999px;
+                    background-color: #fffc;
+                    border: 1px solid rgb(229, 231, 235);
+                    }
+                }
+            }
+        }
+    }
+
+    &-intermediary {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 8%;
+        padding-right: 8%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        
+        &-card {
+            display: flex;
+            flex-direction: column;
+
+            &_number {
+                font-size: 2.25rem;
+                color: rgb(15, 23, 42);
+                font-weight: 700;
+            }
+
+            &_description {
+                color: rgb(100 116 139);
+            }
+        }
+    }
+
+    &-body {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 6%;
+        background: linear-gradient(to top right, rgb(228, 255, 255), rgb(232, 246, 255));
+
+        &-header {
+            &_title {
+                color: rgb(15 23 42);
+                font-size: 1.875rem;
+                font-weight: 700;
+            }
+
+            &_subtitle {
+                color: rgb(100, 116, 139);
+            }
+        }
+    }
 }
