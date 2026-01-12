@@ -1,9 +1,12 @@
 import Star from '../shared/svg/Star'
 import MagnifyingGlass from '../shared/svg/MagnifyingGlass'
 import Location from '../shared/svg/Location'
-import './Home.scss'
 import OfferAnnouncement from '../shared/offerAnnouncement/OfferAnnouncement'
 import Companie from '../shared/companie/Companie'
+import Target from '../shared/svg/Target'
+import Fuze from '../shared/svg/Fuze'
+import ArrowRight from '../shared/svg/ArrowRight'
+import './Home.scss'
 
 export default function Home() {
     return (
@@ -64,7 +67,7 @@ export default function Home() {
                         <h1 className="app-home-body-header-container_title">Offres récentes</h1>
                         <span className="app-home-body-header-container_subtitle">Les dernières opportunités publiées</span>
                     </div>
-                    <button className="app-home-body-header_btn">Voir tout</button>
+                    <button className="app-home-body-header_btn">Voir tout <ArrowRight /></button>
                 </div>
 
                 <div className='app-home-body-card'>
@@ -98,7 +101,7 @@ export default function Home() {
                         <h1 className="app-home-body-recruitment-header_title">Entreprises qui recrutent</h1>
                         <span className="app-home-body-recruitment-header_subtitle">Découvrez les employeurs actifs sur notre plateforme</span>
                     </div>
-                    <button className="app-home-body-recruitment-header_btn">Toutes les entreprises</button>
+                    <button className="app-home-body-recruitment-header_btn">Toutes les entreprises <ArrowRight /></button>
                 </div>
 
                 <div className="app-home-body-recruitment-companie">
@@ -118,7 +121,7 @@ export default function Home() {
 
                     <div className="app-home-body-about-skill">
                         <div className="app-home-body-about-skill-card">
-                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card_logo"><Target size="32" /></div>
                             <div className="app-home-body-about-skill-card-info">
                                 <h3 className="app-home-body-about-skill-card-info_title">Ciblé</h3>
                                 <span className="app-home-body-about-skill-card-info_subtitle">Des offres adaptées à votre profil</span>
@@ -126,7 +129,7 @@ export default function Home() {
                         </div>
 
                         <div className="app-home-body-about-skill-card">
-                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card_logo"><Fuze size="32" /></div>
                             <div className="app-home-body-about-skill-card-info">
                                 <h3 className="app-home-body-about-skill-card-info_title">Rapide</h3>
                                 <span className="app-home-body-about-skill-card-info_subtitle">Postulez en quelques clics</span>
@@ -134,7 +137,7 @@ export default function Home() {
                         </div>
 
                         <div className="app-home-body-about-skill-card">
-                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card_logo"><Star size="32" /></div>
                             <div className="app-home-body-about-skill-card-info">
                                 <h3 className="app-home-body-about-skill-card-info_title">Innovant</h3>
                                 <span className="app-home-body-about-skill-card-info_subtitle">Une expérience utilisateur moderne</span>
