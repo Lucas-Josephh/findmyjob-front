@@ -12,6 +12,7 @@ export default function Navbar() {
     
     const links = [
         { name: "Accueil", path: "/", icon: <House /> },
+        { name: "Offres", path: "/offres", icon: <Suitcase size="16" /> },
     ];
     
     useEffect(() => {
