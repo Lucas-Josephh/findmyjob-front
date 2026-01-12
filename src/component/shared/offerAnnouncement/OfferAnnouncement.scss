@@ -25,12 +25,18 @@
         }
 
         &_date {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             color: rgb(148, 163, 184);
             font-size: .75rem;
         }
     }
 
     &_companie {
+        display: flex;
+        align-items: center;
+        gap: 6px;
         color: rgb(71, 85, 105);
     }
 
@@ -40,10 +46,16 @@
         gap: .75rem;
 
         &_location {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             color: rgb(100, 116, 139);
         }
 
         &_level {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             font-size: .75rem;
             font-weight: 600;
             padding-left: .625rem;
@@ -56,6 +68,9 @@
     }
 
     &_salary {
+        display: flex;
+        align-items: center;
+        gap: 4px;
         color: rgb(5, 150, 105);
         font-weight: 500;
         font-size: .875rem;
