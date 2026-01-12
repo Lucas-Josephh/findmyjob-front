@@ -1,4 +1,4 @@
-import Clock from '../svg/ClockSuitcase copy'
+import Clock from '../svg/Clock'
 import Companie from '../svg/Companie'
 import Location from '../svg/Location'
 import Salary from '../svg/Salary'
