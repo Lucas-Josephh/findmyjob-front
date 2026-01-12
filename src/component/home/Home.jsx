@@ -2,6 +2,8 @@ import Star from '../shared/svg/Star'
 import MagnifyingGlass from '../shared/svg/MagnifyingGlass'
 import Location from '../shared/svg/Location'
 import './Home.scss'
+import OfferAnnouncement from '../shared/offerAnnouncement/OfferAnnouncement'
+import Companie from '../shared/companie/Companie'
 
 export default function Home() {
     return (
@@ -58,8 +60,87 @@ export default function Home() {
             
             <div className="app-home-body">
                 <div className="app-home-body-header">
-                    <h1 className="app-home-body-header_title">Offres récentes</h1>
-                    <span className="app-home-body-header_subtitle">Les dernières opportunités publiées</span>
+                    <div className="app-home-body-header-container">
+                        <h1 className="app-home-body-header-container_title">Offres récentes</h1>
+                        <span className="app-home-body-header-container_subtitle">Les dernières opportunités publiées</span>
+                    </div>
+                    <button className="app-home-body-header_btn">Voir tout</button>
+                </div>
+
+                <div className='app-home-body-card'>
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+                    
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+
+                    <div className='app-home-body-card_element'>
+                        <OfferAnnouncement />
+                    </div>
+                </div>
+
+                <div className="app-home-body-recruitment">
+                    <div className="app-home-body-recruitment-header">
+                        <h1 className="app-home-body-recruitment-header_title">Entreprises qui recrutent</h1>
+                        <span className="app-home-body-recruitment-header_subtitle">Découvrez les employeurs actifs sur notre plateforme</span>
+                    </div>
+                    <button className="app-home-body-recruitment-header_btn">Toutes les entreprises</button>
+                </div>
+
+                <div className="app-home-body-recruitment-companie">
+                    <div className="app-home-body-recruitment-companie_element">
+                        <Companie />
+                    </div>
+                    <div className="app-home-body-recruitment-companie_element">
+                        <Companie />
+                    </div>
+                </div>
+
+                <div className="app-home-body-about">
+                    <div className="app-home-body-about-header">
+                        <h1 className="app-home-body-about-header_title">Pourquoi FindMyJob ?</h1>
+                        <span className="app-home-body-about-header_subtitle">Une plateforme pensée pour votre réussite</span>
+                    </div>
+
+                    <div className="app-home-body-about-skill">
+                        <div className="app-home-body-about-skill-card">
+                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card-info">
+                                <h3 className="app-home-body-about-skill-card-info_title">Ciblé</h3>
+                                <span className="app-home-body-about-skill-card-info_subtitle">Des offres adaptées à votre profil</span>
+                            </div>
+                        </div>
+
+                        <div className="app-home-body-about-skill-card">
+                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card-info">
+                                <h3 className="app-home-body-about-skill-card-info_title">Rapide</h3>
+                                <span className="app-home-body-about-skill-card-info_subtitle">Postulez en quelques clics</span>
+                            </div>
+                        </div>
+
+                        <div className="app-home-body-about-skill-card">
+                            <div className="app-home-body-about-skill-card_logo"></div>
+                            <div className="app-home-body-about-skill-card-info">
+                                <h3 className="app-home-body-about-skill-card-info_title">Innovant</h3>
+                                <span className="app-home-body-about-skill-card-info_subtitle">Une expérience utilisateur moderne</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

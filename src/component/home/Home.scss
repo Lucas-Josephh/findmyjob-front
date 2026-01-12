@@ -145,20 +145,170 @@
     }
 
     &-body {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 14%;
+        padding-right: 14%;
         padding-top: 6%;
         background: linear-gradient(to top right, rgb(228, 255, 255), rgb(232, 246, 255));
 
         &-header {
-            &_title {
-                color: rgb(15 23 42);
-                font-size: 1.875rem;
-                font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+
+            &_btn {
+                height: max-content;
+                font-size: .875rem;
+                font-weight: 500;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                background-color: white;
+                border: 1px solid #e5e5e5;
+                border-radius: calc(.5rem - 2px);
             }
 
-            &_subtitle {
-                color: rgb(100, 116, 139);
+            &-container {
+                margin-bottom: 2.5rem;
+
+                &_title {
+                    color: rgb(15 23 42);
+                    font-size: 1.875rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                }
+
+                &_subtitle {
+                    color: rgb(100, 116, 139);
+                }
+            }
+        }
+
+        &-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            &_element {
+                flex: 0 0 calc(50% - 0.5rem);
+                box-sizing: border-box;
+                background-color: white;
+                border: 1px solid rgb(226, 232, 240);
+                box-shadow: 0 4px 6px -1px rgb(0 0 0 / .1),
+                            0 2px 4px -2px rgb(0 0 0 / .1);
+                border-radius: .75rem;
+                padding: .125rem;
+            }
+        }
+        
+        &-recruitment {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10rem;
+
+            &-header {
+                display: flex;
+                flex-direction: column;
+                
+                &_title {
+                    color: rgb(15 23 42);
+                    font-size: 1.875rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                }
+
+                &_subtitle {
+                    color: rgb(71 85 105);
+                    font-size: 1rem;
+                    line-height: 1.625;
+                }
+
+                &_btn {
+                    height: max-content;
+                    font-size: .875rem;
+                    font-weight: 500;
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    background-color: white;
+                    border: 1px solid #e5e5e5;
+                    border-radius: calc(.5rem - 2px);
+                }
+            }
+
+            &-companie {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 3rem;
+
+                &_element {
+                    flex: 0 0 calc(50% - 0.5rem);   
+                }
+            }
+        }
+
+        &-about {
+            margin-top: 8rem;
+
+            &-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 4rem;
+
+                &_title {
+                    color: rgb(15 23 42);
+                    font-size: 1.875rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                }
+
+                &_subtitle {
+                    color: rgb(100, 116, 139);
+                }
+            }
+
+            &-skill {
+                display: flex;
+                justify-content: space-around;
+                gap: 2rem;
+
+                &-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    background-color: white;
+                    border-radius: 1rem;
+                    padding: 2rem;
+                    width: 100%;
+                    
+                    &_logo {
+                        aspect-ratio: 1/1;
+                        width: 60px;
+                        border-radius: 1rem;
+                        background: linear-gradient(to bottom right, #38bdf8, #2563eb);
+                    }
+
+                    &-info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .25rem;
+                        margin-top: 1.2rem;
+                        
+                        &_title {
+                            color: rgb(15, 23, 42);
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                        }
+
+                        &_subtitle {
+                            color: rgb(100, 116, 139);
+                        }
+                    }
+                }
             }
         }
     }
