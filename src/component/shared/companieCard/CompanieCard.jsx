@@ -1,8 +1,8 @@
 import Location from '../svg/Location'
 import People from '../svg/People'
-import './Companie.scss'
+import './CompanieCard.scss'
 
-export default function Companie() {
+export default function CompanieCard() {
     return (
         <div className="extranet-companie">
             <div className="extranet-companie-container">
