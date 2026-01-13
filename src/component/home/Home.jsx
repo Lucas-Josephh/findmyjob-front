@@ -2,7 +2,7 @@ import Star from '../shared/svg/Star'
 import MagnifyingGlass from '../shared/svg/MagnifyingGlass'
 import Location from '../shared/svg/Location'
 import OfferAnnouncement from '../shared/offerAnnouncement/OfferAnnouncement'
-import Companie from '../shared/companie/Companie'
+import CompanieCard from '../shared/companieCard/CompanieCard'
 import Target from '../shared/svg/Target'
 import Fuze from '../shared/svg/Fuze'
 import ArrowRight from '../shared/svg/ArrowRight'
@@ -106,10 +106,10 @@ export default function Home() {
 
                 <div className="app-home-body-recruitment-companie">
                     <div className="app-home-body-recruitment-companie_element">
-                        <Companie />
+                        <CompanieCard />
                     </div>
                     <div className="app-home-body-recruitment-companie_element">
-                        <Companie />
+                        <CompanieCard />
                     </div>
                 </div>
 
