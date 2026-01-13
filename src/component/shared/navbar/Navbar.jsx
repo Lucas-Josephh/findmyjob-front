@@ -4,6 +4,7 @@ import './Navbar.scss'
 import House from '../svg/House'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import Companie from '../svg/Companie'
 
 export default function Navbar() {
     const path = useLocation().pathname;
@@ -13,6 +14,7 @@ export default function Navbar() {
     const links = [
         { name: "Accueil", path: "/", icon: <House /> },
         { name: "Offres", path: "/offres", icon: <Suitcase size="16" /> },
+        { name: "Entreprises", path: "/entreprises", icon: <Companie size="16" /> },
     ];
     
     useEffect(() => {

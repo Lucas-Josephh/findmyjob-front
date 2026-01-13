@@ -4,6 +4,7 @@ import Home from './component/home/home'
 import Navbar from './component/shared/navbar/Navbar'
 import Footer from './component/shared/footer/Footer'
 import Offer from './component/offer/Offer'
+import Companie from './component/Companie/Companie'
 
 export default function App() {
 
@@ -15,6 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/offres" element={<Offer />} />
+          <Route path="/entreprises" element={<Companie />} />
         </Routes>
 
         <Footer />
