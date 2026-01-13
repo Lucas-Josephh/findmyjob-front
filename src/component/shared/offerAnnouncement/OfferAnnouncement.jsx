@@ -3,7 +3,7 @@ import Companie from '../svg/Companie'
 import Location from '../svg/Location'
 import Salary from '../svg/Salary'
 import Suitcase from '../svg/Suitcase'
-import Tag from '../tag/Tag'
+import Tag from '../Tag/Tag'
 import './OfferAnnouncement.scss'
 
 export default function OfferAnnouncement() {
