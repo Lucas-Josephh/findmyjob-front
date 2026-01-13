@@ -7,6 +7,7 @@ import Target from '../shared/svg/Target'
 import Fuze from '../shared/svg/Fuze'
 import ArrowRight from '../shared/svg/ArrowRight'
 import './Home.scss'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
@@ -72,27 +73,39 @@ export default function Home() {
 
                 <div className='app-home-body-card'>
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
 
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
                     
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
 
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
 
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
 
                     <div className='app-home-body-card_element'>
-                        <OfferAnnouncement />
+                        <Link to="/description">
+                            <OfferAnnouncement />
+                        </Link>
                     </div>
                 </div>
 

@@ -1,0 +1,229 @@
+.app-description {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: rgb(241, 245, 249);
+    min-height: 100vh;
+    padding-left: 22%;
+    padding-right: 22%;
+
+    &_back {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        gap: .5em;
+        font-size: 1rem;
+        color: rgb(71, 85, 105);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &-info, &-job, &-complementary, &-interested {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        color: #0a0a0a;
+        border: 1px solid #e5e5e5;
+        background-color: white;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            
+            &_title {
+                color: rgb(15, 23, 42);
+                font-weight: 700;
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+                margin: 0;
+                margin-bottom: .5rem;
+            }
+
+            &_btn {
+                display: flex;
+                align-items: center;
+                color: #fafafa;
+                font-weight: 500;
+                font-size: .875rem;
+                line-height: 1.25rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                gap: .8rem;
+                border-radius: calc(.5rem - 2px);
+                cursor: pointer;
+                background: linear-gradient(to right, #0ea5e9, #2563eb);
+                border: none;
+                box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+            }
+        }
+
+        &-company {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            color: rgb(2, 132, 199);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            margin-bottom: .5rem;
+            gap: .5rem;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: .75rem;
+
+            &_city {
+                display: flex;
+                align-items: center;
+                color: rgb(71, 85, 105);
+                gap: .375rem;
+            }
+
+            &_level {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: .75rem;
+                font-weight: 600;
+                padding-left: .625rem;
+                padding-right: .625rem;
+                padding-top: .125rem;
+                padding-bottom: .125rem;
+                border-radius: calc(.5rem - 2px);
+                border: 1px solid rgb(226, 232, 240);
+            }
+
+            &_salary {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: rgb(5, 150, 105);
+                font-weight: 500;
+                font-size: .875rem;
+                margin-bottom: 1rem;
+            }
+
+            &_clock {
+                display: flex;
+                align-items: center;
+                color: rgb(100, 116, 139);
+                font-size: .875rem;
+                line-height: 1.25rem;
+                gap: .5rem;
+            }
+        }
+    }
+
+    &-job {
+        &_title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-bottom: 1rem;
+            color: rgb(15, 23, 42);
+        }
+
+        &_paragraphe {
+            margin-bottom: 1rem;
+            color: rgb(51, 65, 85);
+            margin: 0;
+        }
+    }
+
+    &-complementary {
+        &-title {
+            display: flex;
+            align-items: center;
+            color: rgb(15, 23, 42);
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            gap: .5rem;
+            margin-bottom: 1rem;
+
+            &_svg {
+                color: rgb(2, 132, 199);
+            }
+        }
+
+        &-date {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &-container {
+                display: flex;
+                gap: .75rem;
+                color: rgb(148, 163, 184);
+
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .125rem;
+
+                    &_title {
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+                        font-weight: 500;
+                        color: rgb(15, 23, 42);
+                    }
+
+                    &_subtitle {
+                        color: rgb(71, 85, 105);
+                    }
+                }
+            }
+        }
+    }
+
+    &-interested {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgb(186, 230, 253);
+        background: linear-gradient(to right, #f0f9ff, #eff6ff);
+
+        &_title {
+            color: rgb(15, 23, 42);
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-bottom: .5rem;
+        }
+
+        &_subtitle {
+            color: rgb(71, 85, 105);
+            margin-bottom: 1rem;
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            height: 2.5rem;
+            gap: .5rem;
+            font-weight: 500;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border: none;
+            color: #fafafa;
+            cursor: pointer;
+            border-radius: calc(.5rem - 2px);
+            background: linear-gradient(to right, #0ea5e9, #2563eb);
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+        }
+    }
+}
