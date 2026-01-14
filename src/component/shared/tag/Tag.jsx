@@ -1,4 +1,5 @@
-import TagsEnum from '../../models/tagsEnum'
+import ContractEnum from '../../models/ContractEnum'
+import WorkEnum from '../../models/WorkEnum';
 import './Tag.scss'
 
 const normalize = value =>
@@ -13,7 +14,13 @@ export default function Tag({ tag }) {
 
   const normalizedTag = normalize(tag);
 
-  const matchedTag = Object.values(TagsEnum).find(
+  const enums = 
+    [
+      ...Object.values(ContractEnum),
+      ...Object.values(WorkEnum)
+    ];
+
+  const matchedTag = enums.find(
     enumTag => normalize(enumTag) === normalizedTag
   );
 
