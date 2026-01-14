@@ -4,7 +4,7 @@ const ContractEnum = {
   STAGE: "Stage",
   ALTERNANCE: "Alternance",
   FREELANCE: "Freelance",
-  INTERIM: "Interim",
+  INTERIM: "Intérim",
 };
 
 export default ContractEnum;
