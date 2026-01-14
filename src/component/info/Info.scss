@@ -1,0 +1,127 @@
+.app-info {
+    background-color: rgb(241, 245, 249);
+    min-height: 50rem;
+    
+    &-container {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.25rem;
+        background-color: white;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
+        cursor: pointer;
+
+        &-content {
+            display: flex;
+            gap: 1rem;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+            
+            &_img {
+                aspect-ratio: 1/1;
+                width: 4rem;
+                height: 4rem;
+                background: linear-gradient(to bottom right, #f1f5f9 , #e2e8f0);
+                border-radius: .75rem;
+            }
+
+            &-card {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+
+                &_title {
+                    font-size: 1.875rem;
+                    line-height: 2.25rem;
+                    margin-bottom: .5rem;
+                    font-weight: 700;
+                    color: rgb(15, 23, 42);
+                }
+
+                &-info {
+                    display: flex;
+                    gap: 1rem;
+                    margin-bottom: .5rem;
+                    font-size: .875rem;
+                    color: rgb(100, 116, 139);
+                    
+                    &_svg {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                    }
+                }
+
+                &_activitie {
+                    color: rgb(71, 85, 105);
+                    font-size: .75rem;
+                    padding-top: .125rem;
+                    padding-bottom: .125rem;
+                    padding-left: .625rem;
+                    padding-right: .625rem;
+                    background-color: rgb(241, 245, 249);
+                    border-radius: calc(.5rem - 2px);
+                    width: max-content;
+                }
+            }
+        }
+    }
+
+    &-description {
+        margin-left: auto;
+        margin-right: auto;
+        width: 64rem;
+
+        &-nav {
+            width: max-content;
+            display: flex;
+            color: #737373;
+            padding: .25rem;
+            border-radius: .75rem;
+            height: 2.25rem;
+            border: 1px solid rgb(226, 232, 240);
+            background-color: white;
+            margin-bottom: 2rem;
+
+            &_active, &_passif  {
+                display: flex;
+                align-items: center;
+                font-size: .875rem;
+                line-height: 1.25rem;
+                padding: .25rem 1.5rem .25rem 1.5rem;
+                border-radius: .5rem;
+                font-weight: 500;
+                color: #0a0a0a;
+                cursor: pointer;
+                border: none;
+                background-color: white;
+                box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);                
+            }
+
+            &_passif {
+                color: #737373;
+                box-shadow: none;
+            }
+        }
+
+        &-company {
+            background-color: white;
+            border: 1px solid rgb(226, 232, 240);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            
+            &_title {
+                font-weight: 600;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin-bottom: 1rem;
+                color: rgb(15, 23, 42);
+            }
+
+            &_text {
+                color: rgb(71, 85, 105);
+                line-height: 1.625rem
+            }
+        }
+    }
+}

@@ -119,10 +119,14 @@ export default function Home() {
 
                 <div className="app-home-body-recruitment-companie">
                     <div className="app-home-body-recruitment-companie_element">
-                        <CompanieCard />
+                        <Link to="/info">
+                            <CompanieCard />
+                        </Link>
                     </div>
                     <div className="app-home-body-recruitment-companie_element">
-                        <CompanieCard />
+                        <Link to="/info">
+                            <CompanieCard />
+                        </Link>
                     </div>
                 </div>
 
