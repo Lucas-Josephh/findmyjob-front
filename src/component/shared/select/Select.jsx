@@ -43,7 +43,7 @@ export default function Select({id, children, value="", placeholder, className, 
 
     const handleValue = (optionValue) => {
         setCurrentValue(optionValue);
-        setIsActive(!isActive);
+        setIsActive(false);
     }
 
     const handleLeft = () => {
@@ -54,8 +54,8 @@ export default function Select({id, children, value="", placeholder, className, 
     
     return (
         <>
-            <div className="extranet-select">
-                <button className={`extranet-select_btn ${className} ${currentValue === "" ? "extranet-select_placeholder" : ""}`} style={style} id={id} ref={buttonRef} onBlur={handleLeft} onFocus={handleClick}>{children} {currentValue == "" ? placeholder : currentValue}<Arrow /></button>
+            <div className={`extranet-select ${isActive ? 'extranet-select_active' : ''}`}>
+                <button className={`extranet-select_btn ${className} ${currentValue === "" ? "extranet-select_placeholder" : ""}`} style={style} id={id} ref={buttonRef} onClick={handleClick} onBlur={handleLeft} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(); } }}>{children} {currentValue == "" ? placeholder : currentValue}<Arrow /></button>
                 <div className={isActive ? "extranet-select_enable" : "extranet-select_disable"} style={{top: buttonHeight+4, width: buttonWidth}} >
                     <u className="extranet-select-ul">
                         {props.map((optionProps, index) => (
