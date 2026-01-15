@@ -72,7 +72,7 @@ export default function Select({id, children, value="", placeholder, className, 
                     </u>
                 </div>
             </div>
-            <input type="hidden" value={currentValue} />
+            <input type="hidden" defaultValue={currentValue} />
         </>
     )
 }
