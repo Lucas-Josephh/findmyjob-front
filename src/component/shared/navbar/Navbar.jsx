@@ -48,10 +48,19 @@ export default function Navbar() {
                     </Link>
                 ))}
                 </div>
-                
+
                 <div className="extranet-navbar-profil">
-                    <div className="extranet-navbar-profil_initial">LJ</div>
-                    <Arrow />
+                    <Link to="/publication">
+                        <button className="extranet-navbar-publish">
+                            <span className="extranet-navbar-publish_svg">+</span>
+                            Publier une offre
+                        </button>
+                    </Link>
+                    
+                    <div className="extranet-navbar-profil-initial">
+                        <div className="extranet-navbar-profil-initial_svg">LJ</div>
+                        <Arrow />
+                    </div>
                 </div>
             </nav>
         </>
