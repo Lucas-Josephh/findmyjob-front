@@ -7,6 +7,7 @@ import Companie from './component/Companie/Companie'
 import Description from './component/description/Description'
 import Info from './component/info/Info'
 import Publication from './component/publication/Publication'
+import MyOffers from './component/myOffers/MyOffers'
 import './App.scss'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/description" element={<Description />} />
           <Route path="/info" element={<Info />} />
           <Route path="/publication" element={<Publication />} />
+          <Route path="/myoffers" element={<MyOffers />} />
         </Routes>
 
         <Footer />
