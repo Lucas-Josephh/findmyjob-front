@@ -1,5 +1,6 @@
 import ContractEnum from '../../models/ContractEnum'
 import WorkEnum from '../../models/WorkEnum';
+import LevelEnum from '../../models/LevelEnum';
 import './Tag.scss'
 
 const normalize = value =>
@@ -9,7 +10,7 @@ const normalize = value =>
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]/g, "");
 
-export default function Tag({ tag }) {
+export default function Tag({ tag, icon }) {
   if (!tag) return null;
 
   const normalizedTag = normalize(tag);
@@ -17,7 +18,8 @@ export default function Tag({ tag }) {
   const enums = 
     [
       ...Object.values(ContractEnum),
-      ...Object.values(WorkEnum)
+      ...Object.values(WorkEnum),
+      ... Object.values(LevelEnum)
     ];
 
   const matchedTag = enums.find(
@@ -30,7 +32,7 @@ export default function Tag({ tag }) {
 
   return (
     <div className={`extranet-tag_general extranet-tag_${classSuffix}`}>
-      {matchedTag}
+      {icon} {matchedTag}
     </div>
   );
 }

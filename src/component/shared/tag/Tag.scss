@@ -54,4 +54,18 @@
         color: rgb(15, 118, 110);
         background-color: rgb(204, 251, 241);
     }
+
+    &_junior, &_intermediaire, &_senior, &_expert {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: .75rem;
+        font-weight: 600;
+        padding-left: .625rem;
+        padding-right: .625rem;
+        padding-top: .125rem;
+        padding-bottom: .125rem;
+        border-radius: calc(.5rem - 2px);
+        border: 1px solid rgb(226, 232, 240);
+    }
 }

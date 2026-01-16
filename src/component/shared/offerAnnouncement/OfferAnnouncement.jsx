@@ -3,7 +3,7 @@ import Companie from '../svg/Companie'
 import Location from '../svg/Location'
 import Salary from '../svg/Salary'
 import Suitcase from '../svg/Suitcase'
-import Tag from '../Tag/Tag'
+import Tag from '../tag/Tag'
 import './OfferAnnouncement.scss'
 
 export default function OfferAnnouncement() {
@@ -19,7 +19,7 @@ export default function OfferAnnouncement() {
                     <span className='extranet-offerAnnouncement-info_location'><Location size="16" />Location</span>
                     <span><Tag tag="interim" /></span>
                     <span><Tag tag="sur site" /></span>
-                    <span className='extranet-offerAnnouncement-info_level'><Suitcase size="12" /> Junior</span>
+                    <Tag tag="junior" icon={<Suitcase size="12" />}/>
                 </div>
                 <div className='extranet-offerAnnouncement_salary'><Salary />455€ - 4557€</div>
             </div>
