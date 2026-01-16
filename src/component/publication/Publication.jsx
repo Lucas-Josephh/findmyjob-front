@@ -15,6 +15,7 @@ import ContractEnum from "../models/ContractEnum"
 import WorkEnum from "../models/WorkEnum"
 import ActivitieEnum from "../models/ActivitieEnum"
 import FonctionEnum from "../models/FonctionEnum"
+import StudyEnum from "../models/StudyEnum"
 import LevelEnum from "../models/LevelEnum"
 import "./Publication.scss";
 
@@ -23,7 +24,7 @@ export default function Publication() {
         <div className="app-publication">
             
             <div className='app-publication-back'>
-                <Link to="/offres">
+                <Link to="/myoffers">
                     <span className='app-publication-back_span'>
                         <ArrowLeft size="16" />Retour à mes offres
                     </span>
@@ -121,7 +122,7 @@ export default function Publication() {
                         <div className="app-publication-form-info-body-group">
                             <label className="app-publication-form-info-body-group_label" htmlFor="contract">Niveau d'étude</label>
                             <Select className="app-publication-form-info-body-group_select" placeholder={"Sélectionnez"}>
-                                {Object.values(LevelEnum).map((value) => {
+                                {Object.values(StudyEnum).map((value) => {
                                     return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
                                 })}
                             </Select>
