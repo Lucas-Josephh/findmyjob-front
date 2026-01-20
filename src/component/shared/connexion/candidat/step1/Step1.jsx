@@ -4,11 +4,11 @@ import Option from '../../../select/option/Option'
 import StudyEnum from '../../../../models/StudyEnum'
 import "./Step1.scss"
 
-export default function Step1() {
+export default function Step1({handleAddCandidat, handleRemoveCandidat, stepCandidat}) {
     return (
         <div className="extranet-step1">
             <div className="extranet-step1-header">
-                <span className="extranet-step1-header_page">Étape 1/3</span>
+                <span className="extranet-step1-header_page">Étape {stepCandidat}/3</span>
                 <div className="extranet-step1-header-bar">
                     <div className="extranet-step1-header-bar_complete"></div>
                     <div className="extranet-step1-header-bar_nocomplete"></div>
@@ -53,10 +53,10 @@ export default function Step1() {
                 </div>
 
                 <div className="extranet-step1-body-btn">
-                    <button className="extranet-step1-body-btn_back">&lt; Retour</button>
+                    <button className="extranet-step1-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
                     <div className="extranet-step1-body-btn-container">
                         <button className="extranet-step1-body-btn-container_skip">Passer</button>
-                        <button className="extranet-step1-body-btn-container_continue">Continuer &gt;</button>
+                        <button className="extranet-step1-body-btn-container_continue" onClick={handleAddCandidat} >Continuer &gt;</button>
                     </div>
                 </div>
             </div>
