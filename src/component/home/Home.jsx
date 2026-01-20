@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Star from '../shared/svg/Star'
 import MagnifyingGlass from '../shared/svg/MagnifyingGlass'
 import Location from '../shared/svg/Location'
@@ -7,11 +8,12 @@ import Target from '../shared/svg/Target'
 import Fuze from '../shared/svg/Fuze'
 import ArrowRight from '../shared/svg/ArrowRight'
 import './Home.scss'
-import { Link } from 'react-router-dom'
+import Connexion from '../shared/connexion/Connexion'
 
 export default function Home() {
     return (
         <div className="app-home">
+            <Connexion />
             <div className="app-home-head">
                 <div className="app-home-head-container">
                     <div className="app-home-head-container-content">
