@@ -12,10 +12,9 @@
     border-radius: .5rem;
     background-color: white;
     z-index: 999;
-    cursor: pointer;
 
     &_filtre {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -70,6 +69,7 @@
             padding: 1.5rem;
             border: 2px solid rgb(226, 232, 240);
             border-radius: 1rem;
+            cursor: pointer;
 
             &_logo {
                 align-content: center;
