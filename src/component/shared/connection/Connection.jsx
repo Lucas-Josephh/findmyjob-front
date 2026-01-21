@@ -12,6 +12,29 @@ import "./Connection.scss"
 export default function Connection({handleShowConnection}) {
     const [stepCandidat, setStepCandidat] = useState(0);
     const [stepCompany, setStepCompany] = useState(0);
+    
+    // Form data state
+    const [candidatData, setCandidatData] = useState({
+        cv: '',
+        coverLetter: '',
+        studyLevel: '',
+        experiences: [],
+        linkedin: '',
+        github: '',
+        portfolio: '',
+        skills: [],
+        languages: []
+    });
+    
+    const [companyData, setCompanyData] = useState({
+        name: '',
+        description: '',
+        headquarters: '',
+        sector: '',
+        employeeCount: '',
+        contactEmail: '',
+        phone: ''
+    });
 
     const handleAddCandidat = () => {
         setStepCompany(0);
@@ -38,15 +61,49 @@ export default function Connection({handleShowConnection}) {
             <div className="module-connexion_filtre" onClick={handleShowConnection}></div>
             
             {stepCandidat == 1 ?
-                <CandidatStep1 stepCandidat={stepCandidat} handleShowConnection={handleShowConnection} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep1 
+                    stepCandidat={stepCandidat} 
+                    handleShowConnection={handleShowConnection} 
+                    handleAddCandidat={handleAddCandidat} 
+                    handleRemoveCandidat={handleRemoveCandidat}
+                    data={candidatData}
+                    setData={setCandidatData}
+                />
             : stepCandidat == 2 ?
-                <CandidatStep2 stepCandidat={stepCandidat} handleShowConnection={handleShowConnection} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep2 
+                    stepCandidat={stepCandidat} 
+                    handleShowConnection={handleShowConnection} 
+                    handleAddCandidat={handleAddCandidat} 
+                    handleRemoveCandidat={handleRemoveCandidat}
+                    data={candidatData}
+                    setData={setCandidatData}
+                />
             : stepCandidat == 3 ?
-                <CandidatStep3 stepCandidat={stepCandidat} handleShowConnection={handleShowConnection} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep3 
+                    stepCandidat={stepCandidat} 
+                    handleShowConnection={handleShowConnection} 
+                    handleAddCandidat={handleAddCandidat} 
+                    handleRemoveCandidat={handleRemoveCandidat}
+                    data={candidatData}
+                    setData={setCandidatData}
+                />
             : stepCompany == 1 ?
-                <CompanyStep1 stepCompany={stepCompany} handleShowConnection={handleShowConnection} handleAddCompany={handleAddCompany} handleRemoveCompany={handleRemoveCompany}  />
+                <CompanyStep1 
+                    stepCompany={stepCompany} 
+                    handleShowConnection={handleShowConnection} 
+                    handleAddCompany={handleAddCompany} 
+                    handleRemoveCompany={handleRemoveCompany}
+                    data={companyData}
+                    setData={setCompanyData}
+                />
             : stepCompany == 2 ?
-                <CompanyStep2 stepCompany={stepCompany} handleShowConnection={handleShowConnection} handleRemoveCompany={handleRemoveCompany}  />
+                <CompanyStep2 
+                    stepCompany={stepCompany} 
+                    handleShowConnection={handleShowConnection} 
+                    handleRemoveCompany={handleRemoveCompany}
+                    data={companyData}
+                    setData={setCompanyData}
+                />
             :
                 <div className="module-connexion">
                     <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>

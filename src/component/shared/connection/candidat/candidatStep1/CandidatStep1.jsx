@@ -5,7 +5,7 @@ import StudyEnum from '../../../../models/StudyEnum'
 import Cross from "../../../svg/Cross"
 import "./CandidatStep1.scss"
 
-export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, handleShowConnection, stepCandidat}) {
+export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, handleShowConnection, stepCandidat, data, setData}) {
     return (
         <div className="extranet-candidatStep1">
             <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
@@ -27,17 +27,34 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                 
                 <div className="extranet-candidatStep1-body-container">
                     <label className="extranet-candidatStep1-body-container_label" htmlFor="">CV / Résumé</label>
-                    <textarea className="extranet-candidatStep1-body-container_textarea" name="" id=""></textarea>
+                    <textarea 
+                        className="extranet-candidatStep1-body-container_textarea" 
+                        name="" 
+                        id=""
+                        value={data.cv}
+                        onChange={(e) => setData({...data, cv: e.target.value})}
+                    ></textarea>
                 </div>
 
                 <div className="extranet-candidatStep1-body-container">
                     <label className="extranet-candidatStep1-body-container_label" htmlFor="">Lettre de motivation type</label>
-                    <textarea className="extranet-candidatStep1-body-container_textarea" name="" id=""></textarea>
+                    <textarea 
+                        className="extranet-candidatStep1-body-container_textarea" 
+                        name="" 
+                        id=""
+                        value={data.coverLetter}
+                        onChange={(e) => setData({...data, coverLetter: e.target.value})}
+                    ></textarea>
                 </div>
 
                 <div className="extranet-candidatStep1-body-container">
                     <label className="extranet-candidatStep1-body-container_label" htmlFor="">Niveau d'étude</label>
-                    <Select className="app-publication-form-info-body-group_select" placeholder={"Sélectionnez votre niveau"}>
+                    <Select 
+                        className="app-publication-form-info-body-group_select" 
+                        placeholder={"Sélectionnez votre niveau"}
+                        value={data.studyLevel}
+                        onChange={(value) => setData({...data, studyLevel: value})}
+                    >
                         {Object.values(StudyEnum).map((value) => {
                             return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
                         })}
@@ -48,8 +65,30 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                     <label className="extranet-candidatStep1-body-container_label" htmlFor=""><Suitcase size="16" /> Expérience</label>
                     <div className="extranet-candidatStep1-body-cellule">
                         <div className="extranet-candidatStep1-body-container-content">
-                            <input className="extranet-candidatStep1-body-container_input" type="text" placeholder='Poste' />
-                            <input className="extranet-candidatStep1-body-container_input" type="text" placeholder='Entreprise' />
+                            <input 
+                                className="extranet-candidatStep1-body-container_input" 
+                                type="text" 
+                                placeholder='Poste'
+                                value={data.experiences[0]?.position || ''}
+                                onChange={(e) => {
+                                    const newExperiences = [...data.experiences];
+                                    if (newExperiences.length === 0) newExperiences.push({position: '', company: ''});
+                                    newExperiences[0].position = e.target.value;
+                                    setData({...data, experiences: newExperiences});
+                                }}
+                            />
+                            <input 
+                                className="extranet-candidatStep1-body-container_input" 
+                                type="text" 
+                                placeholder='Entreprise'
+                                value={data.experiences[0]?.company || ''}
+                                onChange={(e) => {
+                                    const newExperiences = [...data.experiences];
+                                    if (newExperiences.length === 0) newExperiences.push({position: '', company: ''});
+                                    newExperiences[0].company = e.target.value;
+                                    setData({...data, experiences: newExperiences});
+                                }}
+                            />
                         </div>
                         <button className="extranet-candidatStep1-body-container_btn">+ Ajouter</button>
                     </div>

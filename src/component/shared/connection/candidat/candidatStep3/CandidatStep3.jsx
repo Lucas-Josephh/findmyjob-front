@@ -5,7 +5,7 @@ import Option from "../../../select/option/Option"
 import Cross from "../../../svg/Cross"
 import "./CandidatStep3.scss"
 
-export default function Step3({handleRemoveCandidat, handleShowConnection, stepCandidat}) {
+export default function Step3({handleRemoveCandidat, handleShowConnection, stepCandidat, data, setData}) {
     return (
         <div className="extranet-candidatStep3">
             <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
@@ -28,7 +28,15 @@ export default function Step3({handleRemoveCandidat, handleShowConnection, stepC
                 <div className="extranet-candidatStep3-body-container">
                     <label className="extranet-candidatStep3-body-container_label" htmlFor="">Compétences</label>
                     <div className="extranet-candidatStep3-body-container-content">
-                        <input className="extranet-candidatStep3-body-container_input" type="text" name="" id="" placeholder="Ex: React, Python, Gestion de projet..." />
+                        <input 
+                            className="extranet-candidatStep3-body-container_input" 
+                            type="text" 
+                            name="" 
+                            id="" 
+                            placeholder="Ex: React, Python, Gestion de projet..."
+                            value={data.skills.join(', ')}
+                            onChange={(e) => setData({...data, skills: e.target.value.split(', ')})}
+                        />
                         <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
                     </div>
                 </div>
@@ -36,8 +44,31 @@ export default function Step3({handleRemoveCandidat, handleShowConnection, stepC
                 <div className="extranet-candidatStep3-body-container">
                     <label className="extranet-candidatStep3-body-container_label" htmlFor="">Langues</label>
                     <div className="extranet-candidatStep3-body-container-content">
-                        <input className="extranet-candidatStep3-body-container_input" type="text" name="" id="" placeholder="Langue" />
-                        <Select className="app-publication-form-info-body-group_select" placeholder={"Sélectionnez"}>
+                        <input 
+                            className="extranet-candidatStep3-body-container_input" 
+                            type="text" 
+                            name="" 
+                            id="" 
+                            placeholder="Langue"
+                            value={data.languages[0]?.name || ''}
+                            onChange={(e) => {
+                                const newLanguages = [...data.languages];
+                                if (newLanguages.length === 0) newLanguages.push({name: '', level: ''});
+                                newLanguages[0].name = e.target.value;
+                                setData({...data, languages: newLanguages});
+                            }}
+                        />
+                        <Select 
+                            className="app-publication-form-info-body-group_select" 
+                            placeholder={"Sélectionnez"}
+                            value={data.languages[0]?.level || ''}
+                            onChange={(value) => {
+                                const newLanguages = [...data.languages];
+                                if (newLanguages.length === 0) newLanguages.push({name: '', level: ''});
+                                newLanguages[0].level = value;
+                                setData({...data, languages: newLanguages});
+                            }}
+                        >
                             {Object.values(LanguageEnum).map((value) => {
                                 return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
                             })}

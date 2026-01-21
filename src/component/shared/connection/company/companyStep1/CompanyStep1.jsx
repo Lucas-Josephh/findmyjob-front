@@ -2,7 +2,7 @@ import Companie from "../../../svg/Companie"
 import Cross from "../../../svg/Cross"
 import "./CompanyStep1.scss"
 
-export default function CompanyStep1({handleAddCompany, handleShowConnection, handleRemoveCompany, stepCompany}) {
+export default function CompanyStep1({handleAddCompany, handleShowConnection, handleRemoveCompany, stepCompany, data, setData}) {
     return (
         <div className="extranet-companyStep1">
             <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
@@ -23,17 +23,40 @@ export default function CompanyStep1({handleAddCompany, handleShowConnection, ha
 
                 <div className="extranet-companyStep1-body-container">
                     <label className="extranet-companyStep1-body-container_label" htmlFor="">Nom de l'entreprise *</label>
-                    <input className="extranet-companyStep1-body-container_input" type="text" name="" id="" placeholder="Ex: TechCorp France" />
+                    <input 
+                        className="extranet-companyStep1-body-container_input" 
+                        type="text" 
+                        name="" 
+                        id="" 
+                        placeholder="Ex: TechCorp France"
+                        value={data.name}
+                        onChange={(e) => setData({...data, name: e.target.value})}
+                    />
                 </div>
 
                 <div className="extranet-companyStep1-body-container">
                     <label className="extranet-companyStep1-body-container_label" htmlFor="">Description</label>
-                    <textarea className="extranet-companyStep1-body-container_textarea" name="" id="" placeholder="Décrivez votre entreprise, sa mission, sa culture..."></textarea>
+                    <textarea 
+                        className="extranet-companyStep1-body-container_textarea" 
+                        name="" 
+                        id="" 
+                        placeholder="Décrivez votre entreprise, sa mission, sa culture..."
+                        value={data.description}
+                        onChange={(e) => setData({...data, description: e.target.value})}
+                    ></textarea>
                 </div>
 
                 <div className="extranet-companyStep1-body-container">
                     <label className="extranet-companyStep1-body-container_label" htmlFor="">Siège social *</label>
-                    <input className="extranet-companyStep1-body-container_input" type="text" name="" id="" placeholder="Ex: Paris, France" />
+                    <input 
+                        className="extranet-companyStep1-body-container_input" 
+                        type="text" 
+                        name="" 
+                        id="" 
+                        placeholder="Ex: Paris, France"
+                        value={data.headquarters}
+                        onChange={(e) => setData({...data, headquarters: e.target.value})}
+                    />
                 </div>
 
                 <div className="extranet-companyStep1-body-btn">

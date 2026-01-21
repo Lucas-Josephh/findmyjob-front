@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState } from "react";
 import Arrow from '../svg/Arrow'
 import "./Select.scss"
 
-export default function Select({id, children, value="", placeholder, className, style}) {
+export default function Select({id, children, value="", placeholder, className, style, onChange}) {
     const [isActive, setIsActive] = useState(false);
     const [props, setProps] = useState([]);
     const buttonRef = useRef(null);
@@ -44,6 +44,9 @@ export default function Select({id, children, value="", placeholder, className, 
     const handleValue = (optionValue) => {
         setCurrentValue(optionValue);
         setIsActive(false);
+        if (onChange) {
+            onChange(optionValue);
+        }
     }
 
     const handleLeft = () => {
