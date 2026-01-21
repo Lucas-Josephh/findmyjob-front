@@ -88,7 +88,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👨‍💻 Auteur
 
-Développé avec ❤️ par [Votre Nom]
+Développé avec ❤️ par Lucas JOSEPH
 
 ---
 
