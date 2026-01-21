@@ -39,7 +39,7 @@ export default function Step2({handleAddCandidat, handleRemoveCandidat, stepCand
                     <button className="extranet-step2-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
                     <div className="extranet-step2-body-btn-container">
                         <button className="extranet-step2-body-btn-container_skip">Passer</button>
-                        <button className="extranet-step2-body-btn-container_continue"onClick={handleAddCandidat} >Continuer &gt;</button>
+                        <button className="extranet-step2-body-btn-container_continue" onClick={handleAddCandidat} >Continuer &gt;</button>
                     </div>
                 </div>
             </div>

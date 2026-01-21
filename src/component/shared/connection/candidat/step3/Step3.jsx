@@ -4,7 +4,7 @@ import Select from "../../../select/Select"
 import Option from "../../../select/option/Option"
 import "./Step3.scss"
 
-export default function Step3({handleAddCandidat, handleRemoveCandidat, stepCandidat}) {
+export default function Step3({handleRemoveCandidat, stepCandidat}) {
     return (
         <div className="extranet-step3">
             <div className="extranet-step3-header">
@@ -46,7 +46,7 @@ export default function Step3({handleAddCandidat, handleRemoveCandidat, stepCand
 
                 <div className="extranet-step3-body-btn">
                     <button className="extranet-step3-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
-                        <button className="extranet-step3-body-btn_continue"onClick={handleAddCandidat} >Terminer</button>
+                        <button className="extranet-step3-body-btn_continue">Terminer</button>
                 </div>
             </div>
         </div>
