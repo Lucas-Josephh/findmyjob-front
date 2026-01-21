@@ -141,7 +141,7 @@
                 background-color: transparent;
                 cursor: pointer;
             }
-            &_skip, &_continue {
+            &_skip, &_finish {
                 display: flex;
                 align-items: center;
                 height: 2.25rem;
@@ -160,7 +160,7 @@
                 color: rgb(100, 116, 139);
             }
 
-            &_continue {
+            &_finish {
                 color: #fafafa;
                 background: linear-gradient(to right, #10b981, #0d9488);
             }                

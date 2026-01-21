@@ -46,7 +46,7 @@ export default function Step3({handleRemoveCandidat, stepCandidat}) {
 
                 <div className="extranet-candidatStep3-body-btn">
                     <button className="extranet-candidatStep3-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
-                        <button className="extranet-candidatStep3-body-btn_continue">Terminer</button>
+                    <button className="extranet-candidatStep3-body-btn_finish">Terminer</button>
                 </div>
             </div>
         </div>
