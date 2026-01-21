@@ -212,12 +212,12 @@ export default function Publication() {
 
                     <div className="app-publication-form-info-body-megagroup">
                         <div className="app-publication-form-info-body-group">
-                            <label className="app-publication-form-info-body-group_label" htmlFor="localisation">Mode de travail</label>
+                            <label className="app-publication-form-info-body-group_label" htmlFor="localisation">Date limite de candidature (optionnel)</label>
                             <input className="app-publication-form-info-body-group_input" type="date" />
                         </div>
 
                         <div className="app-publication-form-info-body-group">
-                            <label className="app-publication-form-info-body-group_label" htmlFor="contract">Secteur d'activité</label>
+                            <label className="app-publication-form-info-body-group_label" htmlFor="contract">Fonction</label>
                             <Select className="app-publication-form-info-body-group_select" placeholder={"Sélectionnez"}>
                                 {Object.values(FonctionEnum).map((value) => {
                                     return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
