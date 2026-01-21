@@ -1,16 +1,95 @@
-# React + Vite
+# FindMyJob 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une plateforme web moderne pour connecter les talents aux meilleures opportunités d'emploi. FindMyJob facilite la recherche d'emplois pour les candidats et la publication d'offres pour les entreprises.
 
-Currently, two official plugins are available:
+## ✨ Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🔍 Recherche d'offres** : Trouvez des emplois par poste, compétences, entreprise ou localisation
+- **🏢 Profils d'entreprises** : Découvrez les entreprises et leurs offres
+- **📝 Publications** : Partagez vos expériences et conseils professionnels
+- **👤 Gestion des profils** : Créez un profil candidat ou entreprise
+- **📋 Mes offres** : Gérez vos candidatures et offres publiées
+- **🎯 Filtres avancés** : Filtrez par type de contrat, expérience, salaire, etc.
+- **📱 Interface responsive** : Optimisée pour desktop et mobile
 
-## React Compiler
+## 🛠️ Technologies utilisées
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend** : React 19, Vite
+- **Routing** : React Router DOM
+- **Styling** : SCSS (Sass)
+- **Linting** : ESLint
+- **Build tool** : Vite
 
-## Expanding the ESLint configuration
+## 🚀 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clonez le repository**
+   ```bash
+   git clone https://github.com/votre-username/findmyjob-front.git
+   cd findmyjob-front
+   ```
+
+2. **Installez les dépendances**
+   ```bash
+   npm install
+   ```
+
+3. **Lancez le serveur de développement**
+   ```bash
+   npm run dev
+   ```
+
+4. **Ouvrez votre navigateur** et allez sur `http://localhost:5173`
+
+## 📖 Utilisation
+
+- **Page d'accueil** : Présentation de la plateforme et recherche rapide
+- **Offres** : Liste des offres disponibles avec filtres
+- **Entreprises** : Découvrez les entreprises partenaires
+- **Connexion** : Inscrivez-vous en tant que candidat ou entreprise
+- **Mes offres** : Consultez vos candidatures (candidats) ou offres publiées (entreprises)
+
+## 📁 Structure du projet
+
+```
+src/
+├── component/
+│   ├── home/           # Page d'accueil
+│   ├── offer/          # Page des offres
+│   ├── companie/       # Page entreprises
+│   ├── myOffers/       # Mes offres
+│   ├── publication/    # Publications
+│   ├── description/    # Descriptions
+│   ├── info/           # Informations
+│   ├── models/         # Énumérations et modèles
+│   └── shared/         # Composants partagés
+│       ├── navbar/     # Barre de navigation
+│       ├── footer/     # Pied de page
+│       ├── connection/ # Composants de connexion
+│       ├── svg/        # Icônes SVG
+│       └── ...
+├── App.jsx             # Composant principal
+├── main.jsx            # Point d'entrée
+└── ...
+```
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Pour contribuer :
+
+1. Forkez le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commitez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Pushez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 👨‍💻 Auteur
+
+Développé par Lucas JOSEPH
+
+---
+
+*FindMyJob - Connectez les talents aux opportunités* 🌟
