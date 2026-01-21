@@ -21,11 +21,8 @@
 
         &-bar {
             display: flex;
-        }
-
-        &-bar {
-            display: flex;
             gap: .2rem;
+            margin-right: 1rem;
 
             &_complete, &_nocomplet {
                 width: 2rem;

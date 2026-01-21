@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import Star from '../shared/svg/Star'
 import MagnifyingGlass from '../shared/svg/MagnifyingGlass'
 import Location from '../shared/svg/Location'
@@ -11,9 +12,14 @@ import Connection from '../shared/connection/Connection'
 import './Home.scss'
 
 export default function Home() {
+    const [showConnection, setShowConnection] = useState(true);
+
+    const handleShowConnection = () => {
+        setShowConnection(!showConnection)
+    }
+
     return (
-        <div className="app-home">
-            <Connection />
+        <div className="app-home">           
             <div className="app-home-head">
                 <div className="app-home-head-container">
                     <div className="app-home-head-container-content">
@@ -165,6 +171,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            {showConnection && <Connection handleShowConnection={handleShowConnection}/>}
+            
         </div>
     )
 }

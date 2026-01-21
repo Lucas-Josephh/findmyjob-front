@@ -3,11 +3,13 @@ import ActivitieEnum from "../../../../models/ActivitieEnum"
 import EmployeeEnum from "../../../../models/EmployeeEnum"
 import Select from "../../../select/Select"
 import Option from "../../../select/option/Option"
+import Cross from "../../../svg/Cross"
 import "./CompanyStep2.scss"
 
-export default function CompanyStep2({handleRemoveCompany, stepCompany}) {
+export default function CompanyStep2({handleRemoveCompany, handleShowConnection, stepCompany}) {
     return (
         <div className="extranet-companyStep2">
+            <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
             <div className="extranet-companyStep2-header">
                 <span className="extranet-companyStep2-header_page">Étape {stepCompany}/2</span>
                 <div className="extranet-companyStep2-header-bar">
@@ -47,7 +49,7 @@ export default function CompanyStep2({handleRemoveCompany, stepCompany}) {
                 </div>
 
                 <div className="extranet-companyStep2-body-container">
-                    <label className="extranet-companyStep2-body-container_label" htmlFor="">Téléphone (optionnel) (optionnel)</label>
+                    <label className="extranet-companyStep2-body-container_label" htmlFor="">Téléphone (optionnel)</label>
                     <input className="extranet-companyStep2-body-container_input" type="text" name="" id="" placeholder="+33 1 23 45 67 89" />
                 </div>
 

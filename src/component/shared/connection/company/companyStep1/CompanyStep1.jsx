@@ -1,9 +1,11 @@
 import Companie from "../../../svg/Companie"
+import Cross from "../../../svg/Cross"
 import "./CompanyStep1.scss"
 
-export default function CompanyStep1({handleAddCompany, handleRemoveCompany, stepCompany}) {
+export default function CompanyStep1({handleAddCompany, handleShowConnection, handleRemoveCompany, stepCompany}) {
     return (
         <div className="extranet-companyStep1">
+            <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
             <div className="extranet-companyStep1-header">
                 <span className="extranet-companyStep1-header_page">Étape {stepCompany}/2</span>
                 <div className="extranet-companyStep1-header-bar">

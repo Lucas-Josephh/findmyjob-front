@@ -1,9 +1,11 @@
 import Network from "../../../svg/Network"
+import Cross from "../../../svg/Cross"
 import "./CandidatStep2.scss"
 
-export default function CandidatStep2({handleAddCandidat, handleRemoveCandidat, stepCandidat}) {
+export default function CandidatStep2({handleAddCandidat, handleRemoveCandidat, handleShowConnection, stepCandidat}) {
     return (
         <div className="extranet-candidatStep2">
+            <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
             <div className="extranet-candidatStep2-header">
                 <span className="extranet-candidatStep2-header_page">Étape {stepCandidat}/3</span>
                 <div className="extranet-candidatStep2-header-bar">

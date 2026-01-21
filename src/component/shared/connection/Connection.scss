@@ -23,6 +23,25 @@
         z-index: 999;
     }
 
+    &_leave {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        aspect-ratio: 1/1;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        background-color: transparent;
+        border-radius: .3rem;
+        color: gray;
+        border: none;
+        cursor: pointer;
+    }
+
     &_title {
         color: rgb(15, 23, 42);
         font-weight: 700;

@@ -2,11 +2,13 @@ import Hat from "../../../svg/Hat"
 import LanguageEnum from "../../../../models/LanguageEnum"
 import Select from "../../../select/Select"
 import Option from "../../../select/option/Option"
+import Cross from "../../../svg/Cross"
 import "./CandidatStep3.scss"
 
-export default function Step3({handleRemoveCandidat, stepCandidat}) {
+export default function Step3({handleRemoveCandidat, handleShowConnection, stepCandidat}) {
     return (
         <div className="extranet-candidatStep3">
+            <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
             <div className="extranet-candidatStep3-header">
                 <span className="extranet-candidatStep3-header_page">Étape {stepCandidat}/3</span>
                 <div className="extranet-candidatStep3-header-bar">
