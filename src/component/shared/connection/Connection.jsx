@@ -2,9 +2,9 @@ import Human from "../svg/Human"
 import Companie from "../svg/Companie"
 import "./Connection.scss"
 import { useState } from "react"
-import Step1 from "./candidat/step1/Step1";
-import Step2 from "./candidat/step2/Step2";
-import Step3 from "./candidat/step3/Step3";
+import CandidatStep1 from "./candidat/candidatStep1/CandidatStep1";
+import CandidatStep2 from "./candidat/candidatStep2/CandidatStep2";
+import CandidatStep3 from "./candidat/candidatStep3/CandidatStep3";
 
 export default function Connection() {
     const [stepCandidat, setStepCandidat] = useState(0);
@@ -22,11 +22,11 @@ export default function Connection() {
             <div className="module-connexion_filtre"></div>
             
             {stepCandidat == 1 ?
-                <Step1 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep1 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
             : stepCandidat == 2 ?
-                <Step2 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep2 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
             : stepCandidat == 3 ?
-                <Step3 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
+                <CandidatStep3 stepCandidat={stepCandidat} handleAddCandidat={handleAddCandidat} handleRemoveCandidat={handleRemoveCandidat} />
             :
                 <div className="module-connexion">
                     <h1 className="module-connexion_title">Bienvenue sur FindMyJob</h1>

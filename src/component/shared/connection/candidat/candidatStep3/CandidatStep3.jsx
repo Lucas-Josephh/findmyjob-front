@@ -1,0 +1,54 @@
+import Hat from "../../../svg/Hat"
+import LanguageEnum from "../../../../models/LanguageEnum"
+import Select from "../../../select/Select"
+import Option from "../../../select/option/Option"
+import "./CandidatStep3.scss"
+
+export default function Step3({handleRemoveCandidat, stepCandidat}) {
+    return (
+        <div className="extranet-candidatStep3">
+            <div className="extranet-candidatStep3-header">
+                <span className="extranet-candidatStep3-header_page">Étape {stepCandidat}/3</span>
+                <div className="extranet-candidatStep3-header-bar">
+                    <div className="extranet-candidatStep3-header-bar_complete"></div>
+                    <div className="extranet-candidatStep3-header-bar_complete"></div>
+                    <div className="extranet-candidatStep3-header-bar_complete"></div>
+                </div>
+            </div>
+
+            <div className="extranet-candidatStep3-body">
+                <div className="extranet-candidatStep3-body-text">
+                    <div className="extranet-candidatStep3-body-text_logo"><Hat size="24" /></div>
+                    <h1 className="extranet-candidatStep3-body-text_title">Compétences & Langues</h1>
+                    <span className="extranet-candidatStep3-body-text_subtitle">Mettez en avant vos atouts</span>
+                </div>
+
+                <div className="extranet-candidatStep3-body-container">
+                    <label className="extranet-candidatStep3-body-container_label" htmlFor="">Compétences</label>
+                    <div className="extranet-candidatStep3-body-container-content">
+                        <input className="extranet-candidatStep3-body-container_input" type="text" name="" id="" placeholder="Ex: React, Python, Gestion de projet..." />
+                        <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
+                    </div>
+                </div>
+
+                <div className="extranet-candidatStep3-body-container">
+                    <label className="extranet-candidatStep3-body-container_label" htmlFor="">Langues</label>
+                    <div className="extranet-candidatStep3-body-container-content">
+                        <input className="extranet-candidatStep3-body-container_input" type="text" name="" id="" placeholder="Langue" />
+                        <Select className="app-publication-form-info-body-group_select" placeholder={"Sélectionnez"}>
+                            {Object.values(LanguageEnum).map((value) => {
+                                return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
+                            })}
+                        </Select>
+                        <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
+                    </div>
+                </div>
+
+                <div className="extranet-candidatStep3-body-btn">
+                    <button className="extranet-candidatStep3-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
+                        <button className="extranet-candidatStep3-body-btn_continue">Terminer</button>
+                </div>
+            </div>
+        </div>
+    )
+}
