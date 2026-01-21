@@ -1,12 +1,12 @@
 import Human from "../svg/Human"
 import Companie from "../svg/Companie"
-import "./Connexion.scss"
+import "./Connection.scss"
 import { useState } from "react"
 import Step1 from "./candidat/step1/Step1";
 import Step2 from "./candidat/step2/Step2";
 import Step3 from "./candidat/step3/Step3";
 
-export default function Connexion() {
+export default function Connection() {
     const [stepCandidat, setStepCandidat] = useState(0);
 
     const handleAddCandidat = () => {

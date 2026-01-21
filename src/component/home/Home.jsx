@@ -7,13 +7,13 @@ import CompanieCard from '../shared/companieCard/CompanieCard'
 import Target from '../shared/svg/Target'
 import Fuze from '../shared/svg/Fuze'
 import ArrowRight from '../shared/svg/ArrowRight'
+import Connection from '../shared/connection/Connection'
 import './Home.scss'
-import Connexion from '../shared/connexion/Connexion'
 
 export default function Home() {
     return (
         <div className="app-home">
-            <Connexion />
+            <Connection />
             <div className="app-home-head">
                 <div className="app-home-head-container">
                     <div className="app-home-head-container-content">
