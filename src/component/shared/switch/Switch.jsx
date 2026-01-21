@@ -10,7 +10,7 @@ export default function Switch() {
 
     return (
         <button className={`extranet-switch ${stateSwitch ? "" : "extranet-switch_change"}`} onClick={handleSwitch}>
-            <span className={`extranet-switch_span ${stateSwitch ? "" : "extranet-switch_transition"}`}>dd</span>
+            <span className={`extranet-switch_span ${stateSwitch ? "" : "extranet-switch_transition"}`}></span>
         </button>
     )
 }
