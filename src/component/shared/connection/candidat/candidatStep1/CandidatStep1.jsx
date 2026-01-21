@@ -45,6 +45,7 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                 </div>
 
                 <div>
+                    <label className="extranet-candidatStep1-body-container_label" htmlFor=""><Suitcase size="16" /> Expérience</label>
                     <div className="extranet-candidatStep1-body-cellule">
                         <div className="extranet-candidatStep1-body-container-content">
                             <input className="extranet-candidatStep1-body-container_input" type="text" placeholder='Poste' />
