@@ -14,8 +14,10 @@ export default function Select({id, children, value="", placeholder, className, 
         if (!buttonRef.current) return;
 
         const updateSize = () => {
-            setNavHeightButton(buttonRef.current.offsetHeight);
-            setNavWidthButton(buttonRef.current.offsetWidth);
+            if(buttonRef.current) {
+                setNavHeightButton(buttonRef.current.offsetHeight);
+                setNavWidthButton(buttonRef.current.offsetWidth);
+            }
         };
 
         const observer = new ResizeObserver(() => {
@@ -31,7 +33,9 @@ export default function Select({id, children, value="", placeholder, className, 
         };
     }, [isActive]);
     
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         setProps([]);
         React.Children.forEach(children, child => {
             if (React.isValidElement(child) && child.type.isOption) {
@@ -41,7 +45,11 @@ export default function Select({id, children, value="", placeholder, className, 
         setIsActive(!isActive);
     }
 
-    const handleValue = (optionValue) => {
+    const handleValue = (optionValue, e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
         setCurrentValue(optionValue);
         setIsActive(false);
         if (onChange) {
@@ -49,7 +57,11 @@ export default function Select({id, children, value="", placeholder, className, 
         }
     }
 
-    const handleLeft = () => {
+    const handleLeft = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
         setTimeout(() => {
             setIsActive(false);
         }, 100)
@@ -67,7 +79,7 @@ export default function Select({id, children, value="", placeholder, className, 
                                 className={`extranet-select-ul_li ${optionProps.className || ""}`}
                                 style={optionProps.style}
                                 id={optionProps.id}
-                                onClick={() => handleValue(optionProps.children)}
+                                onClick={(e) => handleValue(optionProps.children, e)}
                             >
                                 {optionProps.children}
                             </li>

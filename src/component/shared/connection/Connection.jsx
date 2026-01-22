@@ -2,6 +2,7 @@ import { useState } from "react"
 import Human from "../svg/Human"
 import Companie from "../svg/Companie"
 import Cross from "../svg/Cross"
+import axios from "axios"
 import CandidatStep1 from "./candidat/candidatStep1/CandidatStep1";
 import CandidatStep2 from "./candidat/candidatStep2/CandidatStep2";
 import CandidatStep3 from "./candidat/candidatStep3/CandidatStep3";
@@ -13,7 +14,6 @@ export default function Connection({handleShowConnection}) {
     const [stepCandidat, setStepCandidat] = useState(0);
     const [stepCompany, setStepCompany] = useState(0);
     
-    // Form data state
     const [candidatData, setCandidatData] = useState({
         cv: '',
         coverLetter: '',
@@ -30,81 +30,109 @@ export default function Connection({handleShowConnection}) {
         name: '',
         description: '',
         headquarters: '',
-        sector: '',
-        employeeCount: '',
-        contactEmail: '',
-        phone: ''
+        industry: '',
+        employee: '',
+        phone: '',
+        mail: '',
+        create_account: new Date().toISOString()
     });
 
     const handleAddCandidat = () => {
         setStepCompany(0);
+        setCompanyData({ name: '', description: '', headquarters: '', industry: '', employee: '', phone: '', mail: '', create_account: new Date().toISOString() })
         setStepCandidat(stepCandidat+1);
     }
 
     const handleAddCompany = () => {
         setStepCandidat(0);
+        setCandidatData({ cv: '', coverLetter: '', studyLevel: '', experiences: [], linkedin: '', github: '', portfolio: '', skills: [], languages: [] })
         setStepCompany(stepCompany+1);
     }
 
     const handleRemoveCandidat = () => {
         setStepCompany(0);
+        setCompanyData({ name: '', description: '', headquarters: '', industry: '', employee: '', phone: '', mail: '', create_account: new Date().toISOString() })
         setStepCandidat(stepCandidat-1);
     }
 
     const handleRemoveCompany = () => {
         setStepCandidat(0);
+        setCandidatData({ cv: '', coverLetter: '', studyLevel: '', experiences: [], linkedin: '', github: '', portfolio: '', skills: [], languages: [] })
         setStepCompany(stepCompany-1);
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    const handleCompanySubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const data = companyData;
+            await axios.post("http://localhost:3000/api/addData", { data, mapping: "25a7d364-c02e-4abb-bcc0-b4b46a6cbd90" });
+            handleShowConnection();
+        } catch (err) {
+            console.error("Erreur lors de l'ajout :", err);
+        }
+    };
 
     return (
         <>
             <div className="module-connexion_filtre" onClick={handleShowConnection}></div>
-            
-            {stepCandidat == 1 ?
-                <CandidatStep1 
-                    stepCandidat={stepCandidat} 
-                    handleShowConnection={handleShowConnection} 
-                    handleAddCandidat={handleAddCandidat} 
-                    handleRemoveCandidat={handleRemoveCandidat}
-                    data={candidatData}
-                    setData={setCandidatData}
-                />
-            : stepCandidat == 2 ?
-                <CandidatStep2 
-                    stepCandidat={stepCandidat} 
-                    handleShowConnection={handleShowConnection} 
-                    handleAddCandidat={handleAddCandidat} 
-                    handleRemoveCandidat={handleRemoveCandidat}
-                    data={candidatData}
-                    setData={setCandidatData}
-                />
-            : stepCandidat == 3 ?
-                <CandidatStep3 
-                    stepCandidat={stepCandidat} 
-                    handleShowConnection={handleShowConnection} 
-                    handleAddCandidat={handleAddCandidat} 
-                    handleRemoveCandidat={handleRemoveCandidat}
-                    data={candidatData}
-                    setData={setCandidatData}
-                />
-            : stepCompany == 1 ?
-                <CompanyStep1 
-                    stepCompany={stepCompany} 
-                    handleShowConnection={handleShowConnection} 
-                    handleAddCompany={handleAddCompany} 
-                    handleRemoveCompany={handleRemoveCompany}
-                    data={companyData}
-                    setData={setCompanyData}
-                />
-            : stepCompany == 2 ?
-                <CompanyStep2 
-                    stepCompany={stepCompany} 
-                    handleShowConnection={handleShowConnection} 
-                    handleRemoveCompany={handleRemoveCompany}
-                    data={companyData}
-                    setData={setCompanyData}
-                />
-            :
+            <form action="" onSubmit={handleSubmit}>
+                {stepCandidat == 1 ?
+                    <CandidatStep1 
+                        stepCandidat={stepCandidat} 
+                        handleShowConnection={handleShowConnection} 
+                        handleAddCandidat={handleAddCandidat} 
+                        handleRemoveCandidat={handleRemoveCandidat}
+                        data={candidatData}
+                        setData={setCandidatData}
+                    />
+                : stepCandidat == 2 ?
+                    <CandidatStep2 
+                        stepCandidat={stepCandidat} 
+                        handleShowConnection={handleShowConnection} 
+                        handleAddCandidat={handleAddCandidat} 
+                        handleRemoveCandidat={handleRemoveCandidat}
+                        data={candidatData}
+                        setData={setCandidatData}
+                    />
+                : stepCandidat == 3 &&
+                    <CandidatStep3 
+                        stepCandidat={stepCandidat} 
+                        handleShowConnection={handleShowConnection} 
+                        handleAddCandidat={handleAddCandidat} 
+                        handleRemoveCandidat={handleRemoveCandidat}
+                        data={candidatData}
+                        setData={setCandidatData}
+                    />
+                }
+            </form>
+
+            <form action="" onSubmit={handleCompanySubmit}>
+                {stepCompany == 1 ?
+                    <CompanyStep1 
+                        stepCompany={stepCompany} 
+                        handleShowConnection={handleShowConnection} 
+                        handleAddCompany={handleAddCompany} 
+                        handleRemoveCompany={handleRemoveCompany}
+                        data={companyData}
+                        setData={setCompanyData}
+                    />
+                : stepCompany == 2 &&
+                    <CompanyStep2 
+                        stepCompany={stepCompany} 
+                        handleShowConnection={handleShowConnection} 
+                        handleRemoveCompany={handleRemoveCompany}
+                        handleCompanySubmit={handleCompanySubmit}
+                        data={companyData}
+                        setData={setCompanyData}
+                    />
+                }
+            </form>
+            {stepCandidat == 0 && stepCompany == 0 &&
                 <div className="module-connexion">
                     <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
                     <h1 className="module-connexion_title">Bienvenue sur FindMyJob</h1>

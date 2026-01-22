@@ -6,7 +6,7 @@ import Option from "../../../select/option/Option"
 import Cross from "../../../svg/Cross"
 import "./CompanyStep2.scss"
 
-export default function CompanyStep2({handleRemoveCompany, handleShowConnection, stepCompany, data, setData}) {
+export default function CompanyStep2({handleRemoveCompany, handleShowConnection, handleCompanySubmit, stepCompany, data, setData}) {
     return (
         <div className="extranet-companyStep2">
             <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
@@ -30,8 +30,8 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                     <Select 
                         className="app-publication-form-info-body-group_select" 
                         placeholder={"Sélectionnez un secteur"}
-                        value={data.sector}
-                        onChange={(value) => setData({...data, sector: value})}
+                        value={data.industry}
+                        onChange={(value) => setData({...data, industry: value})}
                     >
                         {Object.values(ActivitieEnum).map((value) => {
                             return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
@@ -44,8 +44,8 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                     <Select 
                         className="app-publication-form-info-body-group_select" 
                         placeholder={"Sélectionnez"}
-                        value={data.employeeCount}
-                        onChange={(value) => setData({...data, employeeCount: value})}
+                        value={data.employee}
+                        onChange={(value) => setData({...data, employee: value})}
                     >
                         {Object.values(EmployeeEnum).map((value) => {
                             return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
@@ -61,8 +61,8 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                         name="" 
                         id="" 
                         placeholder="contact@entreprise.com"
-                        value={data.contactEmail}
-                        onChange={(e) => setData({...data, contactEmail: e.target.value})}
+                        value={data.mail}
+                        onChange={(e) => setData({...data, mail: e.target.value})}
                     />
                 </div>
 
@@ -80,9 +80,9 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                 </div>
 
                 <div className="extranet-companyStep2-body-btn">
-                    <button className="extranet-companyStep2-body-btn_back" onClick={handleRemoveCompany}>&lt; Retour</button>
+                    <button className="extranet-companyStep2-body-btn_back" type="button" onClick={handleRemoveCompany}>&lt; Retour</button>
                     <div className="extranet-companyStep2-body-btn-container">
-                        <button className="extranet-candidatStep3-body-btn_finish">Terminer</button>
+                        <button className="extranet-candidatStep3-body-btn_finish" type="button" onClick={handleCompanySubmit}>Terminer</button>
                     </div>
                 </div>
             </div>
