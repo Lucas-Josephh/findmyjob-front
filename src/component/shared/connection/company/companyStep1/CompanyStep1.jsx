@@ -31,6 +31,7 @@ export default function CompanyStep1({handleAddCompany, handleShowConnection, ha
                         placeholder="Ex: TechCorp France"
                         value={data.name}
                         onChange={(e) => setData({...data, name: e.target.value})}
+                        required
                     />
                 </div>
 

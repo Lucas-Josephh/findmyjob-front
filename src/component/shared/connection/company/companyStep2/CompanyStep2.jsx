@@ -6,7 +6,7 @@ import Option from "../../../select/option/Option"
 import Cross from "../../../svg/Cross"
 import "./CompanyStep2.scss"
 
-export default function CompanyStep2({handleRemoveCompany, handleShowConnection, handleCompanySubmit, stepCompany, data, setData}) {
+export default function CompanyStep2({handleRemoveCompany, handleShowConnection, stepCompany, data, setData}) {
     return (
         <div className="extranet-companyStep2">
             <button className="module-connexion_leave" onClick={handleShowConnection}><Cross size="16" /></button>
@@ -63,6 +63,7 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                         placeholder="contact@entreprise.com"
                         value={data.mail}
                         onChange={(e) => setData({...data, mail: e.target.value})}
+                        required
                     />
                 </div>
 
@@ -82,7 +83,7 @@ export default function CompanyStep2({handleRemoveCompany, handleShowConnection,
                 <div className="extranet-companyStep2-body-btn">
                     <button className="extranet-companyStep2-body-btn_back" type="button" onClick={handleRemoveCompany}>&lt; Retour</button>
                     <div className="extranet-companyStep2-body-btn-container">
-                        <button className="extranet-candidatStep3-body-btn_finish" type="button" onClick={handleCompanySubmit}>Terminer</button>
+                        <button className="extranet-candidatStep3-body-btn_finish">Terminer</button>
                     </div>
                 </div>
             </div>

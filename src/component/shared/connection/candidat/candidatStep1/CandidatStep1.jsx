@@ -42,8 +42,8 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                         className="extranet-candidatStep1-body-container_textarea" 
                         name="" 
                         id=""
-                        value={data.coverLetter}
-                        onChange={(e) => setData({...data, coverLetter: e.target.value})}
+                        value={data.cover_letter}
+                        onChange={(e) => setData({...data, cover_letter: e.target.value})}
                     ></textarea>
                 </div>
 
@@ -52,8 +52,8 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                     <Select 
                         className="app-publication-form-info-body-group_select" 
                         placeholder={"Sélectionnez votre niveau"}
-                        value={data.studyLevel}
-                        onChange={(value) => setData({...data, studyLevel: value})}
+                        value={data.study}
+                        onChange={(value) => setData({...data, study: value})}
                     >
                         {Object.values(StudyEnum).map((value) => {
                             return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
@@ -69,25 +69,15 @@ export default function CandidatStep1({handleAddCandidat, handleRemoveCandidat, 
                                 className="extranet-candidatStep1-body-container_input" 
                                 type="text" 
                                 placeholder='Poste'
-                                value={data.experiences[0]?.position || ''}
-                                onChange={(e) => {
-                                    const newExperiences = [...data.experiences];
-                                    if (newExperiences.length === 0) newExperiences.push({position: '', company: ''});
-                                    newExperiences[0].position = e.target.value;
-                                    setData({...data, experiences: newExperiences});
-                                }}
+                                value={data.experience}
+                                onChange={(e) => setData({...data, experience: e.target.value})}
                             />
                             <input 
                                 className="extranet-candidatStep1-body-container_input" 
                                 type="text" 
                                 placeholder='Entreprise'
-                                value={data.experiences[0]?.company || ''}
-                                onChange={(e) => {
-                                    const newExperiences = [...data.experiences];
-                                    if (newExperiences.length === 0) newExperiences.push({position: '', company: ''});
-                                    newExperiences[0].company = e.target.value;
-                                    setData({...data, experiences: newExperiences});
-                                }}
+                                value={data.experience}
+                                onChange={(e) => setData({...data, experience: e.target.value})}
                             />
                         </div>
                         <button className="extranet-candidatStep1-body-container_btn">+ Ajouter</button>

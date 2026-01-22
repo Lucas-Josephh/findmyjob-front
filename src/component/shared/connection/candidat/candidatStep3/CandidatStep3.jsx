@@ -34,8 +34,8 @@ export default function Step3({handleRemoveCandidat, handleShowConnection, stepC
                             name="" 
                             id="" 
                             placeholder="Ex: React, Python, Gestion de projet..."
-                            value={data.skills.join(', ')}
-                            onChange={(e) => setData({...data, skills: e.target.value.split(', ')})}
+                            value={data.skill}
+                            onChange={(e) => setData({...data, skill: e.target.value})}
                         />
                         <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
                     </div>
@@ -50,29 +50,35 @@ export default function Step3({handleRemoveCandidat, handleShowConnection, stepC
                             name="" 
                             id="" 
                             placeholder="Langue"
-                            value={data.languages[0]?.name || ''}
-                            onChange={(e) => {
-                                const newLanguages = [...data.languages];
-                                if (newLanguages.length === 0) newLanguages.push({name: '', level: ''});
-                                newLanguages[0].name = e.target.value;
-                                setData({...data, languages: newLanguages});
-                            }}
+                            value={data.language}
+                            onChange={(e) => setData({...data, language: e.target.value})}
                         />
                         <Select 
                             className="app-publication-form-info-body-group_select" 
-                            placeholder={"Sélectionnez"}
-                            value={data.languages[0]?.level || ''}
-                            onChange={(value) => {
-                                const newLanguages = [...data.languages];
-                                if (newLanguages.length === 0) newLanguages.push({name: '', level: ''});
-                                newLanguages[0].level = value;
-                                setData({...data, languages: newLanguages});
-                            }}
+                            placeholder={"Niveau"}
+                            value={data.language}
                         >
                             {Object.values(LanguageEnum).map((value) => {
                                 return <Option className="app-publication-form-info-body-group_option" key={value}>{value}</Option>
                             })}
                         </Select>
+                        <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
+                    </div>
+                </div>
+
+                <div className="extranet-candidatStep3-body-container">
+                    <label className="extranet-candidatStep3-body-container_label" htmlFor="">Renseignez votre email * (temporaire)</label>
+                    <div className="extranet-candidatStep3-body-container-content">
+                        <input 
+                            className="extranet-candidatStep3-body-container_input" 
+                            type="text" 
+                            name="" 
+                            id="" 
+                            placeholder="Ex: contact@email.com"
+                            value={data.mail}
+                            onChange={(e) => setData({...data, mail: e.target.value})}
+                            required
+                        />
                         <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
                     </div>
                 </div>

@@ -16,14 +16,16 @@ export default function Connection({handleShowConnection}) {
     
     const [candidatData, setCandidatData] = useState({
         cv: '',
-        coverLetter: '',
-        studyLevel: '',
-        experiences: [],
+        cover_letter: '',
+        study: '',
+        experience: '',
         linkedin: '',
         github: '',
         portfolio: '',
-        skills: [],
-        languages: []
+        skill: '',
+        language: '',
+        mail: '',
+        create_account: new Date().toISOString()
     });
     
     const [companyData, setCompanyData] = useState({
@@ -45,7 +47,7 @@ export default function Connection({handleShowConnection}) {
 
     const handleAddCompany = () => {
         setStepCandidat(0);
-        setCandidatData({ cv: '', coverLetter: '', studyLevel: '', experiences: [], linkedin: '', github: '', portfolio: '', skills: [], languages: [] })
+        setCandidatData({ cv: '', cover_letter: '', study: '', experience: '', linkedin: '', github: '', portfolio: '', skill: '', language: '', create_account: new Date().toISOString() })
         setStepCompany(stepCompany+1);
     }
 
@@ -57,20 +59,24 @@ export default function Connection({handleShowConnection}) {
 
     const handleRemoveCompany = () => {
         setStepCandidat(0);
-        setCandidatData({ cv: '', coverLetter: '', studyLevel: '', experiences: [], linkedin: '', github: '', portfolio: '', skills: [], languages: [] })
+        setCandidatData({ cv: '', cover_letter: '', study: '', experience: '', linkedin: '', github: '', portfolio: '', skill: '', language: '', create_account: new Date().toISOString() })
         setStepCompany(stepCompany-1);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleCandidatSubmit = async () => {
+        try {
+            const data = candidatData;
+            await axios.post("http://localhost:3000/api/createRole", { data, mapping: "f48c83bd-05cc-4a30-98be-41cbba38b0a1" });
+            handleShowConnection();
+        } catch (err) {
+            console.error("Erreur lors de l'ajout :", err);
+        }
     }
 
-    const handleCompanySubmit = async (e) => {
-        e.preventDefault();
-
+    const handleCompanySubmit = async () => {
         try {
             const data = companyData;
-            await axios.post("http://localhost:3000/api/addData", { data, mapping: "25a7d364-c02e-4abb-bcc0-b4b46a6cbd90" });
+            await axios.post("http://localhost:3000/api/createRole", { data, mapping: "25a7d364-c02e-4abb-bcc0-b4b46a6cbd90" });
             handleShowConnection();
         } catch (err) {
             console.error("Erreur lors de l'ajout :", err);
@@ -80,7 +86,7 @@ export default function Connection({handleShowConnection}) {
     return (
         <>
             <div className="module-connexion_filtre" onClick={handleShowConnection}></div>
-            <form action="" onSubmit={handleSubmit}>
+            <form action="" onSubmit={handleCandidatSubmit}>
                 {stepCandidat == 1 ?
                     <CandidatStep1 
                         stepCandidat={stepCandidat} 
@@ -126,7 +132,6 @@ export default function Connection({handleShowConnection}) {
                         stepCompany={stepCompany} 
                         handleShowConnection={handleShowConnection} 
                         handleRemoveCompany={handleRemoveCompany}
-                        handleCompanySubmit={handleCompanySubmit}
                         data={companyData}
                         setData={setCompanyData}
                     />
