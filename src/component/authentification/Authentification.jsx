@@ -14,18 +14,18 @@ export default function Authentification() {
     })
     
     const handleAuth = async (e) => {
-  e.preventDefault();
-  try {
-    const data = authData;
-    const res = await axios.post("http://localhost:3000/api/auth", { data });
-    if(res.data) {
-        navigate("/home")
-    }
+        e.preventDefault();
+        try {
+            const data = authData;
+            const res = await axios.post("http://localhost:3000/api/auth", { data });
+            if(res.data.exists) {
+                navigate("/home")
+            }
 
-  } catch (err) {
-    console.error("Erreur lors de l'ajout :", err);
-  }
-};
+        } catch (err) {
+            console.error("Erreur lors de l'ajout :", err);
+        }
+    };
 
     const handleChangeAuth = (e) => {
         const { name, value } = e.target;
