@@ -12,7 +12,7 @@ export default function Navbar() {
     const [navHeight, setNavbHeight] = useState(0);
     
     const links = [
-        { name: "Accueil", path: "/", icon: <House /> },
+        { name: "Accueil", path: "/home", icon: <House /> },
         { name: "Offres", path: "/offres", icon: <Suitcase size="16" /> },
         { name: "Entreprises", path: "/entreprises", icon: <Companie size="16" /> },
     ];

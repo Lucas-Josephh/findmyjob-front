@@ -33,9 +33,7 @@ export default function Select({id, children, value="", placeholder, className, 
         };
     }, [isActive]);
     
-    const handleClick = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const handleClick = () => {
         setProps([]);
         React.Children.forEach(children, child => {
             if (React.isValidElement(child) && child.type.isOption) {
@@ -45,11 +43,7 @@ export default function Select({id, children, value="", placeholder, className, 
         setIsActive(!isActive);
     }
 
-    const handleValue = (optionValue, e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
+    const handleValue = (optionValue) => {
         setCurrentValue(optionValue);
         setIsActive(false);
         if (onChange) {
@@ -57,20 +51,16 @@ export default function Select({id, children, value="", placeholder, className, 
         }
     }
 
-    const handleLeft = (e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
+    const handleLeft = () => {
         setTimeout(() => {
             setIsActive(false);
-        }, 100)
+        }, 500)
     }
     
     return (
         <>
             <div className={`extranet-select ${isActive ? 'extranet-select_active' : ''}`}>
-                <button className={`extranet-select_btn ${className} ${currentValue === "" ? "extranet-select_placeholder" : ""}`} style={style} id={id} ref={buttonRef} onClick={handleClick} onBlur={handleLeft} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(); } }} required={required}>{children} {currentValue == "" ? placeholder : currentValue}<Arrow /></button>
+                <button className={`extranet-select_btn ${className} ${currentValue === "" ? "extranet-select_placeholder" : ""}`} type="button" style={style} id={id} ref={buttonRef} onClick={handleClick} onBlur={handleLeft} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(); } }} required={required}>{children} {currentValue == "" ? placeholder : currentValue}<Arrow /></button>
                 <div className={isActive ? "extranet-select_enable" : "extranet-select_disable"} style={{top: buttonHeight+4, width: buttonWidth}} >
                     <u className="extranet-select-ul">
                         {props.map((optionProps, index) => (

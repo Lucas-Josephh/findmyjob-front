@@ -24,7 +24,6 @@ export default function Connection({handleShowConnection}) {
         portfolio: '',
         skill: '',
         language: '',
-        mail: '',
         create_account: new Date().toISOString()
     });
     
@@ -63,7 +62,8 @@ export default function Connection({handleShowConnection}) {
         setStepCompany(stepCompany-1);
     }
 
-    const handleCandidatSubmit = async () => {
+    const handleCandidatSubmit = async (e) => {
+        e.preventDefault();
         try {
             const data = candidatData;
             await axios.post("http://localhost:3000/api/createRole", { data, mapping: "f48c83bd-05cc-4a30-98be-41cbba38b0a1" });
@@ -73,7 +73,8 @@ export default function Connection({handleShowConnection}) {
         }
     }
 
-    const handleCompanySubmit = async () => {
+    const handleCompanySubmit = async (e) => {
+        e.preventDefault();
         try {
             const data = companyData;
             await axios.post("http://localhost:3000/api/createRole", { data, mapping: "25a7d364-c02e-4abb-bcc0-b4b46a6cbd90" });

@@ -66,23 +66,6 @@ export default function Step3({handleRemoveCandidat, handleShowConnection, stepC
                     </div>
                 </div>
 
-                <div className="extranet-candidatStep3-body-container">
-                    <label className="extranet-candidatStep3-body-container_label" htmlFor="">Renseignez votre email * (temporaire)</label>
-                    <div className="extranet-candidatStep3-body-container-content">
-                        <input 
-                            className="extranet-candidatStep3-body-container_input" 
-                            type="text" 
-                            name="" 
-                            id="" 
-                            placeholder="Ex: contact@email.com"
-                            value={data.mail}
-                            onChange={(e) => setData({...data, mail: e.target.value})}
-                            required
-                        />
-                        <input type="submit" value="+"  className="extranet-candidatStep3-body-container_submit" name="" id="" />
-                    </div>
-                </div>
-
                 <div className="extranet-candidatStep3-body-btn">
                     <button className="extranet-candidatStep3-body-btn_back" onClick={handleRemoveCandidat}>&lt; Retour</button>
                     <button className="extranet-candidatStep3-body-btn_finish">Terminer</button>
